@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
 
 app = Flask(__name__)
 
@@ -230,3 +230,10 @@ def kyking():
 </body>
 </html>
 '''
+
+@app.route('/lab2/example')
+def example():
+    name = 'Григорович В.С. Левенец И.А.'
+    lab = 'Лабораторная работа 2'
+    grub = 'ФБИ-11Б =, 3 курс'
+    return render_template('example.html')
