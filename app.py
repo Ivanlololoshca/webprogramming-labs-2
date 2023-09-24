@@ -233,7 +233,16 @@ def kyking():
 
 @app.route('/lab2/example')
 def example():
-    name = 'Григорович В.С. Левенец И.А.'
-    lab = 'Лабораторная работа 2'
-    grub = 'ФБИ-11Б =, 3 курс'
-    return render_template('example.html')
+    name = 'Григорович В.С. Левенец И.А.' 
+    lab_num = 'Лабораторная работа 2'
+    group = 'ФБИ-11'
+    course = '3 курс'
+    fruits = [
+      {'name':'яблоки', 'price':100},
+      {'name':'груши', 'price':120},
+      {'name':'апельсины', 'price':80},
+      {'name':'мандарины', 'price':95},
+      {'name':'манго', 'price':375},
+    ]
+    return render_template('example.html',
+    name=name, lab_num=lab_num, group=group, course=course, fruits=fruits)
