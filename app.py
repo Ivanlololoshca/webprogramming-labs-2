@@ -247,8 +247,17 @@ def example():
       {'name':'мандарины', 'price':95},
       {'name':'манго', 'price':375},
     ]
+    books = [
+      {'name':'Царство живтоных', 'price':328},
+      {'name':'Поваренная книга', 'price':1000},
+      {'name':'Опасная природа', 'price':3392},
+      {'name':'Том Круз', 'price':32494},
+      {'name':'Гарри Поттер', 'price':4833},
+    ]
     return render_template('example.html',
-    name=name, lab_num=lab_num, group=group, course=course, fruits=fruits)
+    name=name, lab_num=lab_num, group=group, course=course, fruits=fruits, books=books)
+
+
 
 @app.route('/lab2/')
 def lab2():
