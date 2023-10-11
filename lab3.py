@@ -33,10 +33,43 @@ def pay():
         price = 80
     else:
         price = 70
-    if request.agrs.get('milk') == 'on'
+
+    if request.args.get('milk') == 'on':
         price += 30
-    if request.agrs.get('sugar') == 'on'
+    if request.args.get('sugar') == 'on':
         price += 20
     return render_template('pay.html', price=price)
 
+@lab3.route('/lab3/rgd')
+def rgd():
+    errors = {}
+    pocypatel = request.args.get('pocypatel')
+    if pocypatel == '':
+        errors['pocypatel'] = 'Заполни поле простофиля !!!'
 
+    tip = request.args.get('tip')
+
+    polc = request.args.get('polc')
+
+    bag = request.args.get('bag')
+
+    fre = request.args.get('fre')
+    if fre =='':
+         errors['fre'] = 'Заполни поле простофиля !!!'
+
+    viezd = request.args.get('viezd')
+    if viezd == '':
+        errors['viezd'] = 'Заполни поле простофиля !!!'
+
+    priezd = request.args.get('priezd')
+    if priezd == '':
+        errors['priezd'] = 'Заполни поле простофиля !!!'
+
+    data = request.args.get('data')
+    if data == '':
+        errors['data'] = 'Заполни поле простофиля !!!'
+    return render_template('rgd.html', pocypatel=pocypatel, tip=tip, polc=polc, bag=bag, fre=fre, viezd=viezd, priezd=priezd, data=data, errors=errors)    
+        
+
+
+    
