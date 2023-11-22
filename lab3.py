@@ -70,6 +70,24 @@ def rgd():
         errors['data'] = 'Заполни поле простофиля !!!'
     return render_template('rgd.html', pocypatel=pocypatel, tip=tip, polc=polc, bag=bag, fre=fre, viezd=viezd, priezd=priezd, data=data, errors=errors)    
         
+@lab3.route('/lab3/bilet')
+def bilet():
+    pocypatel = request.args.get('pocypatel')
+   
+    tip = request.args.get('tip')
 
+    polc = request.args.get('polc')
 
+    bag = request.args.get('bag')
+
+    fre = request.args.get('fre')
+    
+    viezd = request.args.get('viezd')
+    
+    priezd = request.args.get('priezd')
+
+    data = request.args.get('data')
+    if data == '':
+        
+     return render_template('bilet.html', pocypatel=pocypatel, tip=tip, polc=polc, bag=bag, fre=fre, viezd=viezd, priezd=priezd, data=data)
     
